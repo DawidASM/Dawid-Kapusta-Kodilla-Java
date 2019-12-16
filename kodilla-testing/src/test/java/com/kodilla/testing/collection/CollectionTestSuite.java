@@ -25,7 +25,7 @@ public class CollectionTestSuite {
 
         System.out.println("Testing: " + oddNumbers.exterminate(numbers));
 
-        Assert.assertTrue(numbers.isEmpty());
+        Assert.assertTrue(oddNumbers.exterminate(numbers).isEmpty());
     }
 
     @Test
@@ -46,6 +46,5 @@ public class CollectionTestSuite {
          }
 
          Assert.assertEquals(testList,oddNumbers.exterminate(numbers));
-
     }
 }

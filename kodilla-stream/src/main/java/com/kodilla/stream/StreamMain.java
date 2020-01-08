@@ -6,7 +6,7 @@ import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 public class StreamMain {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /*
         System.out.println("Welcome to module 7 - Stream!");
 
@@ -33,10 +33,20 @@ public class StreamMain {
         expressionExecutor.executeExpression(3,2, FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(10,2, FunctionalCalculator::divideAByB);
         */
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        String test = poemBeautifier.beautify("RKS ", text -> text + "Motor Lublin!");
-        System.out.println(test);
+        //Beautifier N1
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify(" siedze na desce, a skarb leży na dnie ", text ->"ABC" + text + "ABC,");
+
+        //Beautifier N2
+        poemBeautifier.beautify("powiekaszam litery sobie,",text -> text.toUpperCase());
+
+        //Beautifier N3
+        poemBeautifier.beautify("tutaj wymieniam litery bo mam klaustrofobie,", text -> text.replace("a","A"));
+
+        //Beautifier N4
+        poemBeautifier.beautify("NA KONIEC PUSZCZE OCZKO WATROBIE.",text -> text.toLowerCase());
 
     }
+
 }

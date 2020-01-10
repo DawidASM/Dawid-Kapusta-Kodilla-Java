@@ -2,6 +2,7 @@ package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.beautifier.PoemDecorator;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -32,7 +33,7 @@ public class StreamMain {
         expressionExecutor.executeExpression(6,2, FunctionalCalculator::subBFromA);
         expressionExecutor.executeExpression(3,2, FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(10,2, FunctionalCalculator::divideAByB);
-        */
+
 
         //Beautifier N1
         PoemBeautifier poemBeautifier = new PoemBeautifier();
@@ -46,7 +47,10 @@ public class StreamMain {
 
         //Beautifier N4
         poemBeautifier.beautify("NA KONIEC PUSZCZE OCZKO WATROBIE.",text -> text.toLowerCase());
+        */
 
+        System.out.println("Using Stream to generate even numbers from 1 to 20.");
+        NumbersGenerator.generateEven(20);
     }
 
 }

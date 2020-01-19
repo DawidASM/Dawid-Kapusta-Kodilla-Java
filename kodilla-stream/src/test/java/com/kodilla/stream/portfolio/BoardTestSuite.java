@@ -123,6 +123,14 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
+        double averageTime = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(taskList -> taskList.getTasks().stream())
+                .map(t -> Period.between(t.getCreated(),LocalDate.now()).getDays())
+                .mapToInt(Integer::intValue)
+                .average()
+                .getAsDouble();
+
         double sumDay = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(taskList -> taskList.getTasks().stream())
@@ -140,6 +148,7 @@ public class BoardTestSuite {
 
         //Then
         Assert.assertEquals(10.0,average,0.01);
+        Assert.assertEquals(10.0,averageTime,0.01);
 
     }
 }

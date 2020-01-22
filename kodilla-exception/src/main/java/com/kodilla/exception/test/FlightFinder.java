@@ -19,7 +19,7 @@ public class FlightFinder {
         Boolean getDeparture = (Boolean)listOfAirport.get(flight.getDepartureAirport());
         Boolean getArrival = (Boolean)listOfAirport.get(flight.getArrivalAirport());
 
-        if( getArrival && getDeparture){
+        if( listOfAirport.get(flight.getDepartureAirport()) && listOfAirport.get(flight.getArrivalAirport())){
             System.out.println("The connection is available.");
 
         } else {
